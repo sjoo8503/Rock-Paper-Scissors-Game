@@ -1,0 +1,158 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #120f26;
+  color: #fff;
+  font: 1.6rem "Roboto Mono", monospace;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2.5rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10rem;
+}
+
+.sub-container {
+  max-width: 600px;
+  width: 55rem;
+  border: solid 2px #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.tie {
+  border: 2px solid rgb(102, 102, 102);
+  background-color: rgb(200, 200, 200);
+  color: #000;
+}
+
+.winner {
+  border: 2px solid rgb(0, 255, 0);
+  background-color: rgb(199, 255, 199);
+  color: #000;
+}
+
+.loser {
+  border: 2px solid red;
+  background-color: rgb(255, 195, 195);
+  color: #000;
+}
+
+.winner:before,
+.loser:before {
+  content: "";
+  position: absolute;
+  height: 1000px;
+  width: 15px;
+  background: #f3f3f3;
+  box-shadow: 0 0 10px #fff;
+  filter: blur(3px);
+  opacity: 0.9;
+  top: -30px;
+  transition: 2.5s;
+  transform: rotate(-45deg) translateX(-60px);
+}
+
+.winner:hover:before,
+.loser:hover:before {
+  transform: rotate(-45deg) translate(1500px, 100px);
+}
+
+.choice-btn__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7rem;
+}
+
+.choice-btn,
+.reset-btn {
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.choice-btn {
+  padding: 2rem;
+  border-radius: 100px;
+  /* border: none; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset-btn {
+  padding: 1.5rem 4rem;
+  letter-spacing: 0.2rem;
+  font: 2rem "Roboto Mono", monospace;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+.choice-btn:hover,
+.reset-btn:hover {
+  background-color: rgb(216, 216, 216);
+}
+
+h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.finale {
+  background-image: url("https://c.tenor.com/tr-K0EESp8EAAAAC/cherry-blossom-falling.gif");
+  color: #000;
+}
+
+/* ------------------------------ */
+/* Media Queries */
+/* ------------------------------ */
+/* Breakpoints */
+/* Large Desktop 2501px ~ */
+/* Default 1729px ~ 2500px */
+/* Large Laptop to Desktop 1404px ~ 1728px */
+/* Landscape Tablet to Small Laptop 848px ~ 1403px */
+/* Landscape Mobile to Portrait Tablet 404px ~ 847px */
+/* Portrait Mobile 0px ~ 403px */
+/* Large Laptop to Desktop 1404px ~ 1728px */
+/* Landscape Mobile to Portrait Tablet 404px ~ 847px */
+
+@media only screen and (max-width: 847px) {
+  .container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+  }
+}
+
+@media only screen and (max-width: 403px) {
+}
